@@ -1,5 +1,4 @@
-const { antidoteIngredients, strengthIngredients } = require("../_mocks_/antidoteMocks")
-const { poisonIngredients } = require('../_mocks_/poisonMocks')
+const { antidoteIngredients, strengthAntidote, poisonIngredient } = require("../_mocks_/antidoteMocks")
 const { Cauldron } = require("../cauldron")
 
 
@@ -7,7 +6,7 @@ describe('Cuando todos los ingredientes llevan el efecto de tipo “Restore”.'
   describe('Cuando todos los ingredientes tienen el mismo atributo (INT, DEX…)', () => {
     test('El nombre deberá ser el correspondiente. Antidote of + “', () => {
       // Arrange 
-      const ingredients = strengthIngredients
+      const ingredients = strengthAntidote
       // Act
       const potion = Cauldron.createPotion(ingredients)
       // Assert
@@ -15,7 +14,7 @@ describe('Cuando todos los ingredientes llevan el efecto de tipo “Restore”.'
     });
     test('El value será positivo e igual a la suma de los valores según la tabla de modificadores.', () => {
       // Arrange
-      const ingredients = strengthIngredients
+      const ingredients = strengthAntidote
       // Act
       const potion = Cauldron.createPotion(ingredients)
       // Assert
@@ -24,7 +23,7 @@ describe('Cuando todos los ingredientes llevan el efecto de tipo “Restore”.'
     });
     test('El tipo será “antidote”', () => {
       // Arrange
-      const ingredients = strengthIngredients
+      const ingredients = strengthAntidote
       // Act
       const potion = Cauldron.createPotion(ingredients)
       // Assert
@@ -47,7 +46,7 @@ describe('Cuando todos los ingredientes llevan el efecto de tipo “Restore”.'
     test('No podremos crear un antídoto. El tipo no puede ser “antidote”', () => {
       // Arrange
       const ingredient1 = antidoteIngredients[1]
-      const ingredient2 = poisonIngredients[1]
+      const ingredient2 = poisonIngredient
       // Act
       const potion = Cauldron.createPotion([ingredient1, ingredient2])
       // Assert

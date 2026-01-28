@@ -309,7 +309,21 @@ const antidoteIngredients = [
     },
 ]
 
-const strengthIngredients = [
+const poisonIngredient = 
+{
+      "_id": "6702b46b76863c206a48ccfb",
+      "name": "Sickly Sap",
+      "description": "A viscous sap that slows movement and reduces dexterity.",
+      "value": 175,
+      "effects": [
+        "greater_damage_dexterity"
+      ],
+      "image": "/images/ingredients/damage/damage_9.webp",
+      "type": "ingredient"
+    }
+
+
+const strengthAntidote = [
     {
       "_id": "6702b44f76863c206a48cce8",
       "name": "Giant's Tear",
@@ -334,4 +348,4 @@ const strengthIngredients = [
     }
 ]
 
-module.exports = { antidoteIngredients, strengthIngredients }
+module.exports = { antidoteIngredients, strengthAntidote, poisonIngredient }
